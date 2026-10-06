@@ -177,6 +177,12 @@
     });
   });
 
+  /* ---------- Deutsche Platzhalter im Anfrage-Formular ---------- */
+  var ph = { name: 'Ihr Name', email: 'ihre@email.de', Telefon: '+49 \u2026', Nachricht: 'Was m\u00f6chten Sie uns mitteilen?', field: '+49 \u2026', 'field-2': 'Was m\u00f6chten Sie uns mitteilen?' };
+  document.querySelectorAll('#anfrage input, #anfrage textarea').forEach(function (i) {
+    if (ph[i.name]) i.placeholder = ph[i.name];
+  });
+
   /* ---------- Aktiven Nav-Link markieren ---------- */
   document.querySelectorAll('.nav_link, .nav_menu_link').forEach(function (a) {
     if (a.getAttribute('href') === location.pathname) a.classList.add('w--current');
