@@ -458,3 +458,11 @@ html:not(.js-anim) .ein_step { display: block; margin-bottom: 2rem; }
 }
 .footer_grid > div { min-width: 0; }
 .props_card { min-width: 0; }
+
+/* ---------- Nachtrag 3: Detail-Spalten & lange Woerter ---------- */
+@media (max-width: 991px) {
+  .det_body { grid-template-columns: minmax(0, 1fr); }
+}
+.det_main, .det_aside { min-width: 0; }
+.det_contact_meta { overflow-wrap: anywhere; }
+.det_desc, .det_richtext { overflow-wrap: break-word; }
