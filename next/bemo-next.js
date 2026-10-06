@@ -177,6 +177,11 @@
     });
   });
 
+  /* ---------- Aktiven Nav-Link markieren ---------- */
+  document.querySelectorAll('.nav_link, .nav_menu_link').forEach(function (a) {
+    if (a.getAttribute('href') === location.pathname) a.classList.add('w--current');
+  });
+
   /* ---------- Footer-Jahr ---------- */
   document.querySelectorAll('[data-year]').forEach(function (el) {
     el.textContent = new Date().getFullYear();

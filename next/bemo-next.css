@@ -218,7 +218,7 @@ html.js-anim .home_hero_img { /* Endzustand setzt GSAP */ }
 @media (max-width: 767px) { .sec_head { flex-direction: column; align-items: flex-start; gap: 1.2rem; } }
 
 /* ---------- Immobilien-Karten (geteilt Home + Listing) ---------- */
-.props_grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(21rem, 1fr)); gap: var(--bn-gutter); row-gap: clamp(3rem, 4vw, 4.5rem); }
+.props_grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(21rem, 100%), 1fr)); gap: var(--bn-gutter); row-gap: clamp(3rem, 4vw, 4.5rem); }
 .props_card { position: relative; display: flex; flex-direction: column; gap: .55rem; }
 .props_card_media { position: relative; aspect-ratio: 4 / 3; overflow: hidden; border-radius: var(--bn-radius); background: var(--bn-surface); }
 .props_card_img { width: 100%; height: 100%; object-fit: cover; transition: transform .7s var(--bn-ease); }
@@ -426,3 +426,26 @@ html:not(.js-anim) .ein_step { display: block; margin-bottom: 2rem; }
   .det_facts_inner { gap: 1.1rem 1.6rem; }
   .det_price_block { margin-left: 0; text-align: left; width: 100%; }
 }
+
+/* ---------- Nachtrag: Detailseite & Formulare ---------- */
+.det_gallery, .det_plan { padding-block: var(--bn-section); }
+.det_gallery:has(.w-dyn-empty:not(.w-dyn-hide)) { display: none; }
+.det_plan:has(.w-dyn-empty:not(.w-dyn-hide)) { display: none; }
+.det_facts .w-dyn-empty { display: none; }
+.det_gallery_track .w-dyn-list, .det_gallery_track .w-dyn-items { display: contents; }
+.det_objnr::before { content: "Objekt-Nr. "; }
+.det_contact_btn, .form_submit {
+  display: inline-flex; align-items: center; justify-content: center; gap: .6rem;
+  background: var(--bn-green); color: #fff;
+  font-family: var(--bn-font); font-size: .95rem; font-weight: 500; letter-spacing: .02em;
+  padding: .95rem 1.9rem; border-radius: 999px; border: 1px solid var(--bn-green);
+  transition: background-color .25s var(--bn-ease), transform .25s var(--bn-ease);
+  cursor: pointer; text-align: center;
+}
+.det_contact_btn:hover, .form_submit:hover { background: var(--bn-dark); border-color: var(--bn-dark); transform: translateY(-1px); }
+.det_contact_btn { width: 100%; margin-top: 1.3rem; }
+.form_submit { margin-top: 1.8rem; }
+#anfrage .w-form { max-width: 42rem; }
+#anfrage .form_label { margin-top: 1.2rem; }
+.w-form input.form_input, .w-form textarea.form_textarea { margin-bottom: .25rem; }
+.det_hero_content .u-eyebrow { color: var(--bn-green-soft); }
